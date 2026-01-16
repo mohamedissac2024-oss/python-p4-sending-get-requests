@@ -1,10 +1,19 @@
 import requests
 import json
 
-url = "https://learn-co-curriculum.github.io/json-site-example/endpoints/locations.json"
 
-response = requests.get(url)
+def all_locations():
+    """Fetch and return all locations from the JSON API."""
+    url = "https://learn-co-curriculum.github.io/json-site-example/endpoints/locations.json"
+    response = requests.get(url)
+    json_content = json.loads(response.text)
+    return json_content
 
-json_content = json.loads(response.text)
 
-print(json.dumps(json_content, indent=4))
+def all_people():
+    """Fetch and return all people from the JSON API."""
+    url = "https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json"
+    response = requests.get(url)
+    json_content = json.loads(response.text)
+    return json_content
+
